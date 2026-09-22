@@ -1,29 +1,24 @@
-const backgroundVideo = document.getElementById("backgroundVideo");
-const enterScreen = document.getElementById("enter-screen");
+const video = document.getElementById("backgroundVideo");
+const musicButton = document.getElementById("musicButton");
+const musicPlayer = document.getElementById("musicPlayer");
+const musicIcon = document.getElementById("musicIcon");
 
-window.enterSite = async function () {
-    console.log("ENTER CLICKED");
+musicButton.addEventListener("click", () => {
+    if (video.muted) {
+        video.muted = false;
+        video.volume = 1;
+        video.play();
 
-    try {
-        backgroundVideo.muted = false;
-        backgroundVideo.volume = 1.0;
+        musicIcon.textContent = "Ⅱ";
+        musicPlayer.classList.add("playing");
 
-        await backgroundVideo.play();
+        musicButton.setAttribute("aria-label", "Pause music");
+    } else {
+        video.muted = true;
 
-        enterScreen.style.opacity = "0";
-        enterScreen.style.pointerEvents = "none";
+        musicIcon.textContent = "▶";
+        musicPlayer.classList.remove("playing");
 
-        setTimeout(() => {
-            enterScreen.style.display = "none";
-        }, 800);
-
-    } catch (error) {
-        console.error("VIDEO ERROR:", error);
-
-        // If browser refuses sound, still start the video
-        backgroundVideo.muted = true;
-        await backgroundVideo.play();
-
-        enterScreen.style.display = "none";
+        musicButton.setAttribute("aria-label", "Play music");
     }
-};
+});

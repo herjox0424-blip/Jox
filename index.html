@@ -27,9 +27,27 @@
 
     <!-- BACKGROUND VIDEO -->
 
-<video class="background-video" autoplay muted loop playsinline>
+<video id="backgroundVideo" class="background-video" autoplay muted loop playsinline>
     <source src="background - Copy.mp4" type="video/mp4">
 </video>
+
+<div class="music-player" id="musicPlayer">
+    <button class="music-play" id="musicButton" aria-label="Play music">
+        <span id="musicIcon">▶</span>
+    </button>
+
+    <div class="music-info">
+        <div class="music-title">In da Party</div>
+        <div class="music-subtitle">just chilling</div>
+    </div>
+
+    <div class="equalizer" id="equalizer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
 
 
     <!-- DARK OVERLAY -->
@@ -129,43 +147,6 @@
         </div>
 
     </main>
-
-
-    <!-- MUSIC PLAYER -->
-
-    <div class="music-player">
-
-        <button id="musicButton" aria-label="Play music">
-
-            <i id="musicIcon" class="fa-solid fa-play"></i>
-
-        </button>
-
-        <div class="music-info">
-
-            <strong>
-                In da Party
-            </strong>
-
-            <span>
-                chill / just chilling
-            </span>
-
-        </div>
-
-        <div class="sound-wave">
-
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </div>
-
-    </div>
-
-
 
     <script src="script.js"></script>
 
