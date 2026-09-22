@@ -1,0 +1,694 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Permanent+Marker&display=swap');
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background: #030303;
+
+    color: white;
+
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+
+.background-video {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -3;
+
+    filter:
+        brightness(0.45)
+        contrast(1.15)
+        saturate(0.75);
+
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.72)
+        );
+
+    pointer-events: none;
+}
+
+
+/* Dark edges */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.65),
+            transparent 25%,
+            transparent 75%,
+            rgba(0,0,0,0.65)
+        );
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 32px 4%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 10;
+
+    animation: fadeDown 1.2s ease forwards;
+}
+
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+}
+
+
+.logo span {
+    width: 28px;
+    height: 1px;
+
+    background: white;
+
+    display: block;
+}
+
+
+.top-right {
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: rgba(255,255,255,0.55);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.hero-content {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    animation: heroAppear 1.5s ease forwards;
+}
+
+
+/* =========================
+   HELLO
+========================= */
+
+.hello {
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 10px;
+
+    color: rgba(255,255,255,0.65);
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   MAIN TITLE
+========================= */
+
+h1 {
+    font-size: clamp(65px, 10vw, 140px);
+
+    line-height: 0.9;
+
+    letter-spacing: -7px;
+
+    font-weight: 900;
+
+    text-shadow:
+        0 10px 50px rgba(0,0,0,0.5);
+}
+
+
+h1 span {
+    font-family: "Permanent Marker", cursive;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.subtitle {
+    margin-top: 28px;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+
+.description {
+    margin-top: 10px;
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   SOCIAL TITLE
+========================= */
+
+.social-title {
+    margin-top: 35px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,0.55);
+}
+
+
+/* =========================
+   SOCIALS
+========================= */
+
+.socials {
+    display: flex;
+
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+
+.social {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 21px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.16);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.social:hover {
+    transform: translateY(-8px) scale(1.08);
+
+    background: rgba(255,255,255,0.16);
+
+    border-color: rgba(255,255,255,0.5);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.35);
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.scroll {
+    position: fixed;
+
+    left: 4%;
+
+    bottom: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    align-items: center;
+
+    z-index: 5;
+
+    color: rgba(255,255,255,0.5);
+
+    animation:
+        fadeIn 2s ease forwards,
+        floating 2s ease-in-out infinite;
+}
+
+
+.scroll span {
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+}
+
+
+.arrow {
+    font-size: 25px;
+
+    font-weight: 300;
+}
+
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+    position: fixed;
+
+    right: 4%;
+
+    bottom: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    z-index: 5;
+
+    padding: 8px 14px;
+
+    border-radius: 40px;
+
+    background: rgba(0,0,0,0.25);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(12px);
+
+    animation: fadeIn 2s ease forwards;
+}
+
+
+.music-player button {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.music-player button:hover {
+    background: rgba(255,255,255,0.2);
+
+    transform: scale(1.08);
+}
+
+
+.music-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    text-align: left;
+}
+
+
+.music-info strong {
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.music-info span {
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 8px;
+
+    color: rgba(255,255,255,0.45);
+}
+
+
+/* =========================
+   SOUND WAVE
+========================= */
+
+.sound-wave {
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+
+    height: 20px;
+}
+
+
+.sound-wave span {
+    width: 2px;
+
+    height: 7px;
+
+    background: rgba(255,255,255,0.55);
+
+    animation: wave 1s ease-in-out infinite;
+
+    animation-play-state: paused;
+}
+
+
+.music-player.playing .sound-wave span {
+    animation-play-state: running;
+}
+
+
+.sound-wave span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+
+.sound-wave span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+.sound-wave span:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+
+.sound-wave span:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+
+
+@keyframes wave {
+
+    0%,
+    100% {
+        height: 5px;
+    }
+
+    50% {
+        height: 17px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        padding: 25px 6%;
+    }
+
+
+    .top-right {
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+
+
+    h1 {
+        font-size: clamp(60px, 18vw, 100px);
+
+        letter-spacing: -5px;
+    }
+
+
+    .hello {
+        font-size: 9px;
+
+        letter-spacing: 7px;
+    }
+
+
+    .description {
+        font-size: 13px;
+    }
+
+
+    .scroll {
+        display: none;
+    }
+
+
+    .music-player {
+        right: 50%;
+
+        transform: translateX(50%);
+
+        bottom: 20px;
+
+        white-space: nowrap;
+    }
+
+}
+
+
+@media (max-height: 650px) {
+
+    .hello {
+        margin-bottom: 10px;
+    }
+
+
+    .subtitle {
+        margin-top: 15px;
+    }
+
+
+    .social-title {
+        margin-top: 20px;
+    }
+
+
+    .socials {
+        margin-top: 10px;
+    }
+
+}
