@@ -12,8 +12,7 @@ rpc.update(
     state="DM if you need Anything.",
     start=time.time() -(100000*60*60),
  buttons=[
-        {"label": "🌐 View My Roblox Community","url":"https://www.roblox.com/share/g/427441976"},
-        {"label": "💬 Join My Server", "url": "https://discord.gg/E8hJybaxZK"}
+        {"label": "About Me!!","url":"https://herjox0424-blip.github.io/Jox/"},
     ],
 )
 
