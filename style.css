@@ -871,3 +871,53 @@ h1 span {
         width: 195px;
     }
 }
+/* ================================
+   VISITOR COUNTER
+   ================================ */
+
+.visitor-count {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+
+    white-space: nowrap;
+}
+
+.visitor-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+#visitorNumber {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0;
+}

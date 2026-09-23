@@ -22,3 +22,18 @@ musicButton.addEventListener("click", () => {
         musicButton.setAttribute("aria-label", "Play music");
     }
 });
+
+const counter = new Counter({
+    workspace: "herjox0424-blips-team-5642"
+});
+
+const visitorNumber = document.getElementById("visitorNumber");
+
+counter.up("first-counter-5642")
+    .then(result => {
+        visitorNumber.textContent = result.value.toLocaleString();
+    })
+    .catch(error => {
+        console.error("Visitor counter error:", error);
+        visitorNumber.textContent = "—";
+    });
