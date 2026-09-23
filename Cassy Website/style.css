@@ -1,0 +1,1429 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color: white;
+}
+
+
+body {
+    background: #17132c;
+}
+
+
+
+/* =========================================================
+   BACKGROUND VIDEO
+========================================================= */
+
+.background-video {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -3;
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.background-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35, 20, 70, 0.25),
+            rgba(85, 45, 115, 0.12),
+            rgba(10, 20, 55, 0.25)
+        );
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.particle {
+
+    position: absolute;
+
+    display: block;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.85
+        );
+
+    box-shadow:
+        0 0 5px
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        ),
+
+        0 0 12px
+        rgba(
+            190,
+            215,
+            255,
+            0.7
+        );
+
+    opacity: 0;
+
+    animation:
+        floatParticle
+        linear infinite;
+}
+
+
+@keyframes floatParticle {
+
+    0% {
+
+        transform:
+            translate3d(
+                0,
+                110vh,
+                0
+            )
+            scale(0.4);
+
+        opacity: 0;
+    }
+
+
+    10% {
+        opacity: 0.7;
+    }
+
+
+    50% {
+
+        transform:
+            translate3d(
+                40px,
+                50vh,
+                0
+            )
+            scale(1);
+    }
+
+
+    85% {
+        opacity: 0.55;
+    }
+
+
+    100% {
+
+        transform:
+            translate3d(
+                -30px,
+                -15vh,
+                0
+            )
+            scale(0.5);
+
+        opacity: 0;
+    }
+
+}
+
+
+
+/* =========================================================
+   GLOW PARTICLES
+========================================================= */
+
+.glow-particle {
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            225,
+            240,
+            255,
+            0.95
+        );
+
+    box-shadow:
+
+        0 0 8px
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        ),
+
+        0 0 22px
+        rgba(
+            160,
+            210,
+            255,
+            0.85
+        ),
+
+        0 0 45px
+        rgba(
+            150,
+            170,
+            255,
+            0.4
+        );
+
+    opacity: 0;
+
+    animation:
+        glowFloat
+        ease-in-out infinite;
+}
+
+
+@keyframes glowFloat {
+
+    0% {
+
+        transform:
+            translate(
+                0,
+                20px
+            )
+            scale(0.5);
+
+        opacity: 0;
+    }
+
+
+    25% {
+        opacity: 0.8;
+    }
+
+
+    50% {
+
+        transform:
+            translate(
+                25px,
+                -35px
+            )
+            scale(1.1);
+
+        opacity: 0.95;
+    }
+
+
+    75% {
+        opacity: 0.5;
+    }
+
+
+    100% {
+
+        transform:
+            translate(
+                -20px,
+                -80px
+            )
+            scale(0.4);
+
+        opacity: 0;
+    }
+
+}
+
+
+
+/* =========================================================
+   INTRO SCREEN
+========================================================= */
+
+.intro {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+.intro.hidden {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   INTRO CARD
+========================================================= */
+
+.intro-card {
+
+    width:
+        min(
+            500px,
+            92vw
+        );
+
+    padding:
+        55px 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.28
+        );
+
+    border-radius: 28px;
+
+    background:
+        rgba(
+            45,
+            30,
+            75,
+            0.42
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 25px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+}
+
+
+
+/* =========================================================
+   INTRO SYMBOL
+========================================================= */
+
+.intro-symbol {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    margin-bottom: 14px;
+
+    font-size: 24px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 15px
+        rgba(
+            220,
+            225,
+            255,
+            0.9
+        );
+}
+
+
+
+/* =========================================================
+   INTRO SMALL TEXT
+========================================================= */
+
+.intro-small {
+
+    margin-bottom: 24px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.85
+    );
+}
+
+
+
+/* =========================================================
+   WELCOME TITLE
+========================================================= */
+
+.intro-card h1 {
+
+    width: 100%;
+
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(
+            48px,
+            9vw,
+            72px
+        );
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    color: white;
+
+    text-shadow:
+        0 0 30px
+        rgba(
+            220,
+            220,
+            255,
+            0.35
+        );
+}
+
+
+
+/* =========================================================
+   INTRO DESCRIPTION
+========================================================= */
+
+.intro-description {
+
+    margin-top: 22px;
+
+    margin-bottom: 30px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.88
+        );
+
+    text-align: center;
+}
+
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+.enter-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    min-width: 116px;
+
+    min-height: 46px;
+
+    padding:
+        0 22px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        );
+
+    border-radius: 999px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    color: white;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.enter-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+}
+
+
+.enter-button:active {
+
+    transform:
+        translateY(0)
+        scale(0.97);
+}
+
+
+.enter-button:disabled {
+    cursor: default;
+}
+
+
+.button-arrow {
+
+    font-size: 18px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.enter-button:hover
+.button-arrow {
+
+    transform:
+        translateX(4px);
+}
+
+
+
+/* =========================================================
+   MAIN WEBSITE
+========================================================= */
+
+.website {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    z-index: 10;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+.website.show {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar {
+
+    position: absolute;
+
+    top: 30px;
+
+    left: 35px;
+
+    right: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 20;
+}
+
+
+.logo {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+}
+
+
+.logo span {
+    font-size: 15px;
+}
+
+
+.location {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.8;
+}
+
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content-wrapper {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        80px 20px 55px;
+}
+
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-card {
+
+    width:
+        min(
+            650px,
+            92vw
+        );
+
+    max-height:
+        calc(
+            100vh - 130px
+        );
+
+    overflow: hidden;
+
+    padding:
+        32px 36px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
+
+    border-radius: 28px;
+
+    background:
+        rgba(
+            22,
+            18,
+            48,
+            0.3
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 25px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.2
+        );
+}
+
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.card-top {
+
+    margin-bottom: 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.7;
+}
+
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.profile-card h2 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(
+            34px,
+            6vw,
+            50px
+        );
+
+    line-height: 1.1;
+
+    font-weight: 600;
+}
+
+
+.hello {
+
+    margin-top: 6px;
+
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+
+    margin-top: 18px;
+
+    max-width: 550px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    opacity: 0.82;
+}
+
+
+
+/* =========================================================
+   FAVORITES
+========================================================= */
+
+.favorites {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 10px;
+
+    margin-top: 23px;
+}
+
+
+.favorite {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    border-radius: 15px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
+}
+
+
+.favorite-icon {
+    font-size: 21px;
+}
+
+
+.favorite small {
+
+    display: block;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.6;
+}
+
+
+.favorite strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+
+/* =========================================================
+   FAVORITE COLORS
+========================================================= */
+
+.color-section {
+
+    margin-top: 20px;
+}
+
+
+.color-section small {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.6;
+}
+
+
+.color-list {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 8px;
+}
+
+
+.color {
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+}
+
+
+.color.purple {
+    background: #8d5de8;
+}
+
+
+.color.red {
+    background: #d94361;
+}
+
+
+.color.black {
+    background: #15151c;
+}
+
+
+.color.blue {
+    background: #4d8fd9;
+}
+
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.socials {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 23px;
+}
+
+
+.social-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.22
+        );
+
+    border-radius: 50%;
+
+    color: white;
+
+    text-decoration: none;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.social-icon i {
+    font-size: 18px;
+}
+
+
+
+/* DISCORD */
+
+.social-icon.discord:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+    background:
+        rgba(
+            88,
+            101,
+            242,
+            0.25
+        );
+
+    border-color:
+        rgba(
+            130,
+            140,
+            255,
+            0.7
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            88,
+            101,
+            242,
+            0.25
+        );
+}
+
+
+
+/* INSTAGRAM */
+
+.social-icon.instagram:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+    background:
+        rgba(
+            225,
+            48,
+            108,
+            0.22
+        );
+
+    border-color:
+        rgba(
+            255,
+            130,
+            175,
+            0.7
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            225,
+            48,
+            108,
+            0.25
+        );
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    left: 0;
+
+    right: 0;
+
+    text-align: center;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.65;
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+    .topbar {
+
+        top: 20px;
+
+        left: 20px;
+
+        right: 20px;
+    }
+
+
+    .logo {
+        font-size: 17px;
+    }
+
+
+    .location {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .intro-card {
+
+        width: 92vw;
+
+        padding:
+            45px 20px;
+    }
+
+
+    .intro-card h1 {
+
+        font-size:
+            clamp(
+                42px,
+                12vw,
+                62px
+            );
+
+        letter-spacing: 0;
+    }
+
+
+    .intro-small {
+
+        margin-bottom: 20px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .intro-description {
+
+        margin-top: 18px;
+
+        margin-bottom: 28px;
+
+        font-size: 13px;
+    }
+
+
+    .profile-card {
+
+        padding:
+            25px 22px;
+
+        border-radius: 22px;
+    }
+
+
+    .description {
+
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+
+    .favorites {
+
+        gap: 7px;
+    }
+
+
+    .favorite {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding:
+            9px 5px;
+    }
+
+
+    .favorite-icon {
+        font-size: 18px;
+    }
+
+
+    .favorite strong {
+        font-size: 9px;
+    }
+
+
+    .social-icon {
+
+        width: 42px;
+
+        height: 42px;
+    }
+
+}
+
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 380px) {
+
+
+    .intro-card {
+
+        padding:
+            38px 15px;
+    }
+
+
+    .intro-card h1 {
+
+        font-size: 40px;
+    }
+
+
+    .intro-small {
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .intro-description {
+
+        font-size: 12px;
+    }
+
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
+/* =========================================================
+   ROBLOX
+========================================================= */
+
+.roblox-logo {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex-shrink: 0;
+}
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
