@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (typeof Counter === "undefined") {
         console.error("CounterAPI library did not load.");
-        visitorNumber.textContent = "—";
+        visitorNumber.textContent = "0";
         return;
     }
 
@@ -61,17 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
     counter.up("first-counter-5642")
         .then(result => {
 
-            console.log("Visitor count:", result.value);
+            console.log("CounterAPI result:", result);
+
+            const count =
+                result?.data?.value ??
+                result?.value ??
+                result?.data?.up_count ??
+                0;
 
             visitorNumber.textContent =
-                Number(result.value).toLocaleString();
+                Number(count).toLocaleString();
 
         })
         .catch(error => {
 
             console.error("Visitor counter error:", error);
 
-            visitorNumber.textContent = "—";
+            visitorNumber.textContent = "0";
 
         });
 
