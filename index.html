@@ -27,27 +27,32 @@
 
     <!-- BACKGROUND VIDEO -->
 
-<video id="backgroundVideo" class="background-video" autoplay muted loop playsinline>
-    <source src="background - Copy.mp4" type="video/mp4">
-</video>
+    <video id="backgroundVideo" class="background-video" autoplay muted loop playsinline>
+        <source src="background - Copy.mp4" type="video/mp4">
+    </video>
 
-<div class="music-player" id="musicPlayer">
-    <button class="music-play" id="musicButton" aria-label="Play music">
-        <span id="musicIcon">▶</span>
-    </button>
 
-    <div class="music-info">
-        <div class="music-title">In da Party</div>
-        <div class="music-subtitle">just chilling</div>
+    <!-- MUSIC PLAYER -->
+
+    <div class="music-player" id="musicPlayer">
+
+        <button class="music-play" id="musicButton" aria-label="Play music">
+            <span id="musicIcon">▶</span>
+        </button>
+
+        <div class="music-info">
+            <div class="music-title">In da Party</div>
+            <div class="music-subtitle">just chilling</div>
+        </div>
+
+        <div class="equalizer" id="equalizer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
     </div>
-
-    <div class="equalizer" id="equalizer">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
 
 
     <!-- DARK OVERLAY -->
@@ -69,11 +74,15 @@
         </div>
 
     </header>
-    <div class="visitor-count">
-    <span class="visitor-dot"></span>
-    <span id="visitorNumber">0</span>
-    <span>VISITORS</span>
-</div>
+
+
+    <!-- VISITOR COUNTER -->
+
+    <div class="visitor-count" id="visitorCount">
+        <span class="visitor-dot"></span>
+        <span id="visitorNumber">0</span>
+        <span>VISITORS</span>
+    </div>
 
 
     <!-- MAIN -->
@@ -86,22 +95,18 @@
                 H E Y !
             </div>
 
-
             <h1>
                 I'M <span>JOX.</span>
             </h1>
-
 
             <p class="subtitle">
                 Nice to meet you.
             </p>
 
-
             <p class="description">
                 Im 17! From Philippines, Living in Japan,<br>
                 just chilling everyday!
             </p>
-
 
             <div class="social-title">
                 Check out my Socials/Communities!
@@ -119,7 +124,7 @@
                     target="_blank"
                     class="social discord"
                     aria-label="Discord"
-                 
+                >
                     <i class="fab fa-discord"></i>
                 </a>
 
@@ -131,7 +136,7 @@
                     target="_blank"
                     class="social instagram"
                     aria-label="Instagram"
-                 
+                >
                     <i class="fab fa-instagram"></i>
                 </a>
 
@@ -153,8 +158,14 @@
 
     </main>
 
+
+    <!-- COUNTERAPI -->
+
     <script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
-<script src="script.js"></script>
+
+    <!-- YOUR SCRIPT -->
+
+    <script src="script.js"></script>
 
 </body>
 
