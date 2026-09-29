@@ -8,8 +8,8 @@ rpc = Presence(CLIENT_ID)
 rpc.connect()
 
 rpc.update(
-    details="Rank Game...",
-    state="DM if you want to Join!",
+    details= "Programming...",
+    state="Why are you in my profile?",
     start=time.time() -(100000*60*60),
  buttons=[
         {"label": "About Me!!","url":"https://herjox0424-blip.github.io/Jox/"},

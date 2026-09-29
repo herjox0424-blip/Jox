@@ -1427,3 +1427,38 @@ body {
     align-items: center;
     justify-content: center;
 }
+/* =========================================================
+   TIKTOK
+========================================================= */
+
+.social-icon.tiktok:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            0,
+            0,
+            0,
+            0.3
+        );
+}
