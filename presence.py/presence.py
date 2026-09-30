@@ -8,8 +8,8 @@ rpc = Presence(CLIENT_ID)
 rpc.connect()
 
 rpc.update(
-    details= "Programming...",
-    state="Why are you in my profile?",
+    details= "My Nigger. Mwa UwU",
+    state="ZRX is Gay",
     start=time.time() -(100000*60*60),
  buttons=[
         {"label": "About Me!!","url":"https://herjox0424-blip.github.io/Jox/"},
