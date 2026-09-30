@@ -1,13 +1,3 @@
-/* =========================================================
-   CASSY WEBSITE
-   INTRO → WEBSITE
-========================================================= */
-
-
-/* =========================================================
-   ELEMENTS
-========================================================= */
-
 const intro =
     document.getElementById("intro");
 
@@ -30,21 +20,11 @@ enterButton.addEventListener(
     () => {
 
 
-        /*
-         * Prevent double clicking.
-         */
 
         enterButton.disabled = true;
 
 
 
-        /*
-         * Unmute the video.
-         *
-         * Because this happens directly
-         * from the button click, the browser
-         * allows the audio to start.
-         */
 
         video.muted = false;
 
@@ -52,9 +32,6 @@ enterButton.addEventListener(
 
 
 
-        /*
-         * Start the video.
-         */
 
         video.play().catch(
             error => {
@@ -69,9 +46,6 @@ enterButton.addEventListener(
 
 
 
-        /*
-         * Hide intro.
-         */
 
         intro.classList.add(
             "hidden"
@@ -79,10 +53,7 @@ enterButton.addEventListener(
 
 
 
-        /*
-         * Immediately show
-         * the main website.
-         */
+      
 
         website.classList.add(
             "show"
@@ -91,11 +62,6 @@ enterButton.addEventListener(
     }
 );
 
-
-
-/* =========================================================
-   NORMAL PARTICLES
-========================================================= */
 
 const PARTICLE_COUNT = 100;
 
@@ -115,9 +81,6 @@ for (
         "particle";
 
 
-    /*
-     * Random position.
-     */
 
     particle.style.left =
         `${Math.random() * 100}%`;
@@ -126,9 +89,6 @@ for (
         `${Math.random() * 100}%`;
 
 
-    /*
-     * Random size.
-     */
 
     const size =
         1 +
@@ -142,17 +102,13 @@ for (
         `${size}px`;
 
 
-    /*
-     * Random speed.
-     */
+  
 
     particle.style.animationDuration =
         `${8 + Math.random() * 16}s`;
 
 
-    /*
-     * Random animation starting point.
-     */
+
 
     particle.style.animationDelay =
         `${-Math.random() * 20}s`;
@@ -163,12 +119,6 @@ for (
     );
 
 }
-
-
-
-/* =========================================================
-   GLOW PARTICLES
-========================================================= */
 
 const GLOW_PARTICLE_COUNT = 25;
 
@@ -188,9 +138,7 @@ for (
         "glow-particle";
 
 
-    /*
-     * Random position.
-     */
+
 
     particle.style.left =
         `${Math.random() * 100}%`;
@@ -199,9 +147,6 @@ for (
         `${Math.random() * 100}%`;
 
 
-    /*
-     * Random size.
-     */
 
     const size =
         4 +
@@ -215,17 +160,11 @@ for (
         `${size}px`;
 
 
-    /*
-     * Random animation speed.
-     */
 
     particle.style.animationDuration =
         `${5 + Math.random() * 8}s`;
 
 
-    /*
-     * Random starting point.
-     */
 
     particle.style.animationDelay =
         `${-Math.random() * 10}s`;
@@ -239,9 +178,6 @@ for (
 
 
 
-/* =========================================================
-   SPARKLES
-========================================================= */
 
 const sparkleSymbols = [
 
@@ -272,9 +208,6 @@ for (
         "particle";
 
 
-    /*
-     * Random sparkle symbol.
-     */
 
     sparkle.textContent =
         sparkleSymbols[
@@ -285,9 +218,6 @@ for (
         ];
 
 
-    /*
-     * Random position.
-     */
 
     sparkle.style.left =
         `${Math.random() * 100}%`;
@@ -296,9 +226,7 @@ for (
         `${Math.random() * 100}%`;
 
 
-    /*
-     * Remove normal particle styling.
-     */
+
 
     sparkle.style.width =
         "auto";
@@ -313,17 +241,12 @@ for (
         "none";
 
 
-    /*
-     * Random size.
-     */
 
     sparkle.style.fontSize =
         `${6 + Math.random() * 10}px`;
 
 
-    /*
-     * Random animation.
-     */
+
 
     sparkle.style.animationDuration =
         `${5 + Math.random() * 10}s`;
@@ -337,12 +260,6 @@ for (
     );
 
 }
-
-
-
-/* =========================================================
-   VIDEO LOOP SAFETY
-========================================================= */
 
 video.addEventListener(
     "ended",
