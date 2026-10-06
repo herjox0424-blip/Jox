@@ -1,0 +1,25 @@
+{
+  "TOKENS": [
+    ""
+  ],
+  "CHANNEL_IDS": [
+    ""
+  ],
+  "GUILD_ID": "",
+  "DASHBOARD": {
+    "ENABLED": true,
+    "PORT": 3124,
+    "PASSWORD": "4jp+R'#7MCw9"
+  },
+  "CONTROLLER": {
+    "ENABLED": true,
+    "TOKEN": "",
+    "PREFIX": "!",
+    "OWNER_ID": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  }
+}
